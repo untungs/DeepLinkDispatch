@@ -40,6 +40,15 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:23.1.0'
 
+    apt "org.androidannotations:androidannotations:3.3.2"
+    compile 'org.androidannotations:androidannotations-api:3.3.2'
+
     testCompile 'org.robolectric:robolectric:3.0-rc3'
     testCompile 'junit:junit:4.12'
+}
+
+apt {
+    arguments {
+        androidManifestFile android.applicationVariants.outputs[0].processResources.manifestFile
+    }
 }

@@ -84,6 +84,12 @@ public class DeepLinkEntryTest {
     assertThat(parameters.get("query")).isEqualTo("search%20paris");
   }
 
+  @Test public void schemeWithNumbers() {
+    DeepLinkEntry entry = deepLinkEntry("jackson5://example.com");
+
+    assertThat(entry.matches("jackson5://example.com")).isFalse();
+  }
+
   @Test public void noMatchesDifferentScheme() {
     DeepLinkEntry entry = deepLinkEntry("airbnb://something");
 

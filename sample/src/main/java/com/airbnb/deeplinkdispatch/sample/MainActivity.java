@@ -23,7 +23,17 @@ import android.widget.Toast;
 
 import com.airbnb.deeplinkdispatch.DeepLink;
 
+<<<<<<< 628b176724fbe24c7ff9757a1d5004933a42dada
 @DeepLink({ "dld://classDeepLink", "http://example.com/foo{arg}", "dld://example.com/deepLink" })
+=======
+import org.androidannotations.annotations.EActivity;
+
+@EActivity(R.layout.activity_main)
+@DeepLink({"airbnb://classDeepLink", "http://example.com/foo{arg}",
+    "airbnb://example.com/deepLink"})
+// You can also register a single deep link for a particular activity to handle:
+// @DeepLink("example.com/something")
+>>>>>>> Adds android annotations sample project
 public class MainActivity extends AppCompatActivity {
   private static final String ACTION_DEEP_LINK_METHOD = "deep_link_method";
   private static final String ACTION_DEEP_LINK_COMPLEX = "deep_link_complex";
