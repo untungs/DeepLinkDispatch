@@ -420,6 +420,7 @@ public class DeepLinkProcessor extends AbstractProcessor {
         .addStatement("super.onCreate(savedInstanceState)")
         .addStatement("$T.dispatchFrom(this)",
             ClassName.get("com.airbnb.deeplinkdispatch", "DeepLinkDelegate"))
+        .addStatement("finish()")
         .build();
 
     TypeSpec deepLinkActivity = TypeSpec.classBuilder("DeepLinkActivity")
